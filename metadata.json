@@ -1,0 +1,6 @@
+{
+  "name": "toolbox",
+  "description": "酒馆角色卡管理工具，支持角色卡上传、解包、编辑、分组管理与更新导出",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

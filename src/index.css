@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 防止 iOS 弹出键盘时输入框自动放大以及双击/手势缩放 */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+html, body {
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* iOS Safe Area Padding for Standalone PWA / Web App Added to Home Screen */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+/* 顶部状态栏与刘海/灵动岛避让 */
+header {
+  padding-top: env(safe-area-inset-top, 0px);
+  height: calc(3.5rem + env(safe-area-inset-top, 0px)) !important;
+}
+
+aside {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Toast 提示避让状态栏 */
+.toast-container {
+  top: calc(1rem + env(safe-area-inset-top, 0px)) !important;
+}
+
